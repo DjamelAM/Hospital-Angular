@@ -1,0 +1,101 @@
+<table mat-table [dataSource]="patients$ | async" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>firstName </th>
+        <td mat-cell *matCellDef="let element" (click)="goToDetails(element.id)">
+            <a>{{element.firstName}}</a>
+        </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> lastName </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="department">
+        <th mat-header-cell *matHeaderCellDef> department </th>
+        <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="birthYear">
+        <th mat-header-cell *matHeaderCellDef> birthYear </th>
+        <td mat-cell *matCellDef="let element"> {{element.birthYear}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="chamber">
+        <th mat-header-cell *matHeaderCellDef> chamber </th>
+        <td mat-cell *matCellDef="let element"> {{element.chamber}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sexe">
+        <th mat-header-cell *matHeaderCellDef> Sexe </th>
+        <td mat-cell *matCellDef="let element"> {{element.sexe}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="doctorId">
+        <th mat-header-cell *matHeaderCellDef> DoctorId </th>
+        <td mat-cell *matCellDef="let element"> {{element.doctorId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell  class="action" *matCellDef="let toto" (click)="delete(toto.id)"> ❌ </td>
+    </ng-container>
+
+    <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef> Update </th>
+
+        <td mat-cell class="action" *matCellDef="let element" (click)="openDialog(true, element)"> ✏ </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row class="link" *matRowDef="let row; columns: displayedColumns;"> </tr>
+
+
+
+</table>
+
+<div class="button">New patient
+    <button mat-fab (click)="openDialog(false, undefined)">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
+    <div class="button">Get excel of the tab
+        <button mat-fab (click)="exportAsXLSX()"><mat-icon>vertical_align_bottom</mat-icon></button>
+</div>
+
+<table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="id">Dessert (100g)</th>
+      <th mat-sort-header="firstName">Calories</th>
+      <th mat-sort-header="lastName">Fat (g)</th>
+      <th mat-sort-header="department">Carbs (g)</th>
+      <th mat-sort-header="chamber">Protein (g)</th>
+      <th mat-sort-header="doctorId">Fat (g)</th>
+      <th mat-sort-header="sexe">Carbs (g)</th>
+      <th mat-sort-header="birthYear">Protein (g)</th>
+    </tr>
+  
+    <tr *ngFor="let patient of patients">
+      <td>{{patient.id}}</td>
+      <td>{{patient.firstName}}</td>
+      <td>{{patient.lastName}}</td>
+      <td>{{patient.department}}</td>
+      <td>{{patient.chamber}}</td>
+      <td>{{patient.doctorId}}</td>
+      <td>{{patient.sexe}}</td>
+      <td>{{patient.birthYear}}</td>
+    </tr>
+  </table>

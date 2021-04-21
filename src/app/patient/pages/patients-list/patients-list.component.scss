@@ -1,0 +1,36 @@
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+  padding: 0 20px;
+}
+
+.link:hover {
+  background-color: #fdf0d5;
+}
+a {
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgb(219, 25, 35);
+}
+
+a:hover {
+  color: aqua;
+}
+
+.mat-fab.mat-accent {
+  background-color: #8b9eb7;
+}
+table {
+  width: 100%;
+}
+
+.button {
+  width: 40%;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.action {
+  cursor: pointer;
+}

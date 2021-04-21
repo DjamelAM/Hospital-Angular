@@ -1,0 +1,31 @@
+<div *ngIf="doctor; else elseBlock">
+    <mat-toolbar class="doctor" color="primary">
+      
+        <span class="title">Hospital - Doctor</span>
+       
+
+       Switch to Patient
+        <a class="swap" (click)="goTo()"> 
+            <img class="change" src="../assets/changeDisplay.png" alt="" srcset="">
+        </a>
+
+        <img class="logo" src="../assets/doctor.png" alt="" srcset="">
+
+
+    </mat-toolbar>
+</div>
+
+<ng-template #elseBlock>
+    <mat-toolbar class="patient" color="warn">
+        <span class="title">Hospital - Patient</span>
+        
+        
+        Switch to Doctor
+        <a class="swap" (click)="goTo()"> 
+            <img class="change" src="../assets/changeDisplay.png" alt="" srcset="">
+        </a>
+
+        <img class="logo" src="../assets/doctor.png" alt="" srcset="">
+
+    </mat-toolbar>
+</ng-template>

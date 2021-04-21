@@ -1,0 +1,90 @@
+<form [formGroup]='patientForm' (ngSubmit)="onSubmit(patientForm.value)">
+    <mat-dialog-content class="mat-typography">
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>id :</mat-label>
+                <input matInput formControlName="id" placeholder="" type="text" required>
+                <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>firstName :</mat-label>
+                <input matInput formControlName="firstName" placeholder="Jack" type="text" required>
+                <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>lastName :</mat-label>
+                <input matInput formControlName="lastName" placeholder="DUPOND" type="text" required>
+                <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>birthYear :</mat-label>
+                <input matInput formControlName="birthYear" placeholder="1988" type="number" min="1900" required>
+                <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+
+
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Department :</mat-label>
+                <mat-select formControlName="department" required>
+                    <mat-option *ngFor="let name of enumKeys " [value]="name">
+                        {{name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Chamber :</mat-label>
+                <input matInput formControlName="chamber" placeholder="105" type="number" min="1" max="300" required>
+                <mat-icon matPrefix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Sexe :</mat-label>
+                <mat-select formControlName="sexe" required>
+                    <mat-option *ngFor="let sexe of sexes" [value]="sexe">
+                        {{sexe}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+        </div>
+
+
+
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Doctor in charge :</mat-label>
+                <mat-select formControlName="doctorId">
+                    <mat-option *ngFor="let doctors of doctors" [value]="doctors.id">
+                        {{doctors.firstName}} {{doctors.lastName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button type="submit" cdkFocusInitial [disabled]="!patientForm.valid">{{formAction}}</button>
+    </mat-dialog-actions>
+
+</form>

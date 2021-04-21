@@ -1,0 +1,41 @@
+<mat-card >
+    <mat-card-header>
+
+        <mat-card-title>{{doctor?.firstName}} {{doctor?.lastName}} </mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p>Department : {{doctor?.department}}</p>
+        <mat-card-actions>
+            <button mat-button (click)="openDialog(true, doctor)">Update Doctor ✏</button>
+            <button mat-button (click)="delete(doctor.id)">Delete Doctor ❌</button>
+        </mat-card-actions>
+        <div *ngIf="(patients$ | async) as patients">
+
+            <p>Patients :</p>
+            <mat-selection-list #patientSelected [multiple]="false">
+                <mat-list-option *ngFor="let patient of patients" [value]="patient">
+                    {{patient?.firstName}} {{patient?.lastName}}
+                </mat-list-option>
+            </mat-selection-list>
+
+            <p>
+                Patient selected: {{patientSelected.selectedOptions.selected[0]?.value.firstName}}
+                {{patientSelected.selectedOptions.selected[0]?.value.lastName}}</p>
+            <p>Birthyear : {{patientSelected.selectedOptions.selected[0]?.value.birthYear}}</p>
+            <p>Sexe : {{patientSelected.selectedOptions.selected[0]?.value.sexe}}</p>
+            <p>Department : {{patientSelected.selectedOptions.selected[0]?.value.department}}</p>
+            <p>Chamber : {{patientSelected.selectedOptions.selected[0]?.value.chamber}}</p>
+            <div *ngIf="patientSelected.selectedOptions.selected[0]?.value"> <button mat-button
+                    (click)="goToPatient(patientSelected.selectedOptions.selected[0]?.value.id)">Go to
+                    Patient ⤴</button></div>
+
+
+
+        </div>
+    </mat-card-content>
+
+</mat-card>
+
+
+<!--  -->
