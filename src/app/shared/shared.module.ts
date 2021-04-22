@@ -11,18 +11,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
-import {MatSortModule} from '@angular/material/sort';
-
-
-
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [NotFoundComponent],
-  imports: [
-    CommonModule
-
-
-  ],
+  imports: [CommonModule],
   exports: [
     MatTableModule,
     MatDialogModule,
@@ -34,7 +28,8 @@ import {MatSortModule} from '@angular/material/sort';
     MatSelectModule,
     MatCardModule,
     MatListModule,
-    MatSortModule
-  ]
+    MatSortModule,
+    MatPaginatorModule,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

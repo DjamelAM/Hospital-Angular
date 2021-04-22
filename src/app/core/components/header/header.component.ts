@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   imagePatient: string = "/src/assets/patient.png";
   constructor(private _activateRoute: ActivatedRoute, private _router: Router, location: Location) {
 
-    console.log(location.path() == "/doctors");
+   
 
   }
 
