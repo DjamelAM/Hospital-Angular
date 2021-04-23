@@ -2,7 +2,7 @@
   background-color: #ff495c;
 }
 .patient {
-  background-color: #8b9eb7;
+  // background-color: #8b9eb7;
 }
 .logo {
   width: 68px;
@@ -20,4 +20,14 @@
 
 .swap {
   width: 50%;
+}
+
+a {
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgb(219, 25, 35);
+}
+
+a:hover {
+  color: aqua;
 }

@@ -10,13 +10,21 @@
         </a>
 
         <img class="logo" src="../assets/doctor.png" alt="" srcset="">
+        
 
 
     </mat-toolbar>
+
+    <button mat-raised-button  color="primary" id="backButton" (click)="goBack()"><mat-icon>arrow_back</mat-icon>
+        Back</button>  
+    <button mat-raised-button (click)="goToDoctors()" disabled>Doctors</button>
+    <button mat-raised-button  color="primary" id="backButton" (click)="goToPatients()">Patients
+    </button>  
+    
 </div>
 
 <ng-template #elseBlock>
-    <mat-toolbar class="patient" color="warn">
+    <mat-toolbar class="patient" color="primary">
         
         <span class="title">Hospital - Patient</span>
         
@@ -29,4 +37,9 @@
         <img class="logo" src="../assets/doctor.png" alt="" srcset="">
 
     </mat-toolbar>
+    <button mat-raised-button  color="primary" id="backButton" (click)="goBack()"><mat-icon>arrow_back</mat-icon>
+        Back</button>   
+     
+        <button mat-raised-button  color="primary" id="backButton" (click)="goToDoctors()">Doctors</button>
+            <button mat-raised-button (click)="goToPatients()" disabled>Patients</button>
 </ng-template>

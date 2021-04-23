@@ -1,16 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort, Sort } from '@angular/material/sort';
-import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { IPatient } from 'src/app/core/models/patient';
 import { PatientFormData } from 'src/app/core/models/patient-form-data';
 import { ExcelService } from 'src/app/core/services/http/excel.service';
 import { PatientService } from 'src/app/core/services/http/patient.service';
 import { PatientFormComponent } from '../../components/patient-form/patient-form.component';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-patients-list',
@@ -40,8 +38,7 @@ export class PatientsListComponent implements OnInit {
     private _patientService: PatientService,
     private _excelService: ExcelService,
     public dialog: MatDialog,
-    private _router: Router,
-    private location: Location
+    private _router: Router
   ) {
     this._patientService
       .getPatients()
@@ -100,9 +97,5 @@ export class PatientsListComponent implements OnInit {
       .getPatients()
       .subscribe((patients) => (this.patients = patients));
     this._excelService.exportAsExcelFile(this.patients, 'liste_patients');
-  }
-
-  goBack() {
-    this.location.back();
   }
 }

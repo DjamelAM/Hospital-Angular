@@ -7,18 +7,19 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { PatientService } from './services/http/patient.service';
 import { ExcelService } from './services/http/excel.service';
-
-
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers: [DoctorService, PatientService, ExcelService],
-  exports: [HeaderComponent, FooterComponent]
+  exports: [HeaderComponent, FooterComponent],
 })
-export class CoreModule { }
+export class CoreModule {}
