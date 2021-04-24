@@ -1,0 +1,63 @@
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+  padding: 0 20px;
+}
+
+.link:hover {
+  background-color: #fdf0d5;
+}
+a {
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgb(219, 25, 35);
+}
+
+a:hover {
+  color: aqua;
+}
+
+.mat-fab.mat-accent {
+  background-color: #ff495c;
+}
+table {
+  width: 100%;
+  background-color: white;
+}
+
+.button {
+  width: 40%;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.action {
+  cursor: pointer;
+}
+
+td {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.mat-form-field {
+  width: 90%;
+  padding: 5px;
+  margin: 15px 0;
+}
+
+th {
+  color: white;
+  background-color: #ff495c;
+}
+.docName {
+  text-align: center;
+}
+
+.docInfo {
+  text-align: center;
+}
+main {
+  min-height: 100%;
+}

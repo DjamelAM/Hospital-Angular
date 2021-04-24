@@ -51,7 +51,6 @@ export class PatientFormComponent implements OnInit {
     this.enumKeys = Object.values(Department);
     if (data.toUpdate) {
       this.patientForm = this.fb.group({
-        id: [data.patient.id, [Validators.required, Validators.minLength(0)]],
         firstName: [
           data.patient.firstName,
           [Validators.required, this.noWhitespaceValidator],
@@ -74,14 +73,6 @@ export class PatientFormComponent implements OnInit {
       });
     } else {
       this.patientForm = this.fb.group({
-        id: [
-          '',
-          [
-            Validators.required,
-            this.noWhitespaceValidator,
-            Validators.minLength(0),
-          ],
-        ],
         firstName: ['', [Validators.required, this.noWhitespaceValidator]],
         lastName: ['', [Validators.required, this.noWhitespaceValidator]],
         birthYear: ['', [Validators.required, Validators.minLength(1900)]],

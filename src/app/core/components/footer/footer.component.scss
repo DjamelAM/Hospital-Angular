@@ -1,4 +1,17 @@
-.footbar {
+.footer {
   bottom: 0;
-  position: absolute;
+  position: fixed;
+  width: 100%;
+}
+.title {
+  width: 100%;
+}
+.doctor {
+  background-color: #ff495c;
+}
+.patient {
+  background-color: cornflowerblue;
+}
+.home {
+  background-color: indigo;
 }

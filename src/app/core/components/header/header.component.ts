@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  doctor: boolean;
+  navbar: String;
   imageDoctor: string = '/src/assets/doctor.png';
   imagePatient: string = '/src/assets/patient.png';
 
@@ -18,18 +18,20 @@ export class HeaderComponent implements OnInit {
     private location: Location
   ) {}
 
-  ngOnInit(): void {
-    /* this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['app-header']);
-    }); */
-  }
+  ngOnInit(): void {}
 
   ngDoCheck(): void {
     if (location.pathname.includes('/doctors')) {
-      this.doctor = true;
+      this.navbar = 'doctors';
     }
     if (location.pathname.includes('/patients')) {
-      this.doctor = false;
+      this.navbar = 'patients';
+    }
+    if (
+      !location.pathname.includes('/patients') &&
+      !location.pathname.includes('/doctors')
+    ) {
+      this.navbar = 'home';
     }
   }
 
@@ -52,5 +54,8 @@ export class HeaderComponent implements OnInit {
 
   goToPatients() {
     this._router.navigateByUrl('/patients');
+  }
+  goToHome() {
+    this._router.navigateByUrl('');
   }
 }

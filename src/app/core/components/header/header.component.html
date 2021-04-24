@@ -1,45 +1,158 @@
-<div *ngIf="doctor; else elseBlock">
+<container-element [ngSwitch]="navbar">
+  <div *ngSwitchCase="'doctors'">
     <mat-toolbar class="doctor" color="primary">
-         
-        <span class="title">Hospital - Doctor</span>
-       
-
-       Switch to Patient
-        <a class="swap" (click)="goTo()"> 
-            <img class="change" src="../assets/changeDisplay.png" alt="" srcset="">
-        </a>
-
-        <img class="logo" src="../assets/doctor.png" alt="" srcset="">
-        
-
-
+      <svg
+        version="1.1"
+        class="hospitalLogo"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 1841.232 1623.351"
+        enable-background="new 0 0 1841.232 1623.351"
+        xml:space="preserve"
+        (click)="goToHome()"
+      >
+        <path
+          d="M1317.225,307.693V11.675H517.278v296.017H13.242v1303.983H1827.99V307.693H1317.225z M443.523,1289.005H147.714v-215.113
+       h295.809V1289.005z M443.523,956.24H147.714V741.127h295.809V956.24z M443.523,623.529H147.714V408.362h295.809V623.529z
+        M797.893,133.005h80.957V51.786h64.871v81.219h81.325v64.922h-81.325v80.904H878.85v-80.904h-80.957V133.005z M544.141,408.362
+       h295.809v215.167H544.141V408.362z M544.141,741.127h295.809V956.24H544.141V741.127z M544.141,1073.837h295.809v215.113H544.141
+       V1073.837z M1236.637,1607.575H591.295v-204.441h645.342V1607.575z M1250.095,1289.005H954.393v-215.113h295.703V1289.005z
+        M1250.095,956.24H954.393V741.127h295.703V956.24z M1250.095,623.529H954.393V408.362h295.703V623.529z M1680.427,1289.005
+       h-296.019v-215.113h296.019V1289.005z M1680.427,956.24h-296.019V741.127h296.019V956.24z M1680.427,623.529h-296.019V408.362
+       h296.019V623.529z"
+        />
+      </svg>
+      <span class="title">Hospital - Doctors</span>
     </mat-toolbar>
+    <mat-toolbar-row>
+      <button
+        mat-raised-button
+        color="primary"
+        id="backButton"
+        (click)="goBack()"
+      >
+        <mat-icon>arrow_back</mat-icon> Back
+      </button>
+      <button
+        mat-raised-button
+        class="doctorsButton"
+        (click)="goToDoctors()"
+        disabled
+      >
+        Doctors
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        class="patientsButton"
+        (click)="goToPatients()"
+      >
+        Patients
+      </button>
+    </mat-toolbar-row>
+  </div>
 
-    <button mat-raised-button  color="primary" id="backButton" (click)="goBack()"><mat-icon>arrow_back</mat-icon>
-        Back</button>  
-    <button mat-raised-button (click)="goToDoctors()" disabled>Doctors</button>
-    <button mat-raised-button  color="primary" id="backButton" (click)="goToPatients()">Patients
-    </button>  
-    
-</div>
-
-<ng-template #elseBlock>
+  <div *ngSwitchCase="'patients'">
     <mat-toolbar class="patient" color="primary">
-        
-        <span class="title">Hospital - Patient</span>
-        
-        
-        Switch to Doctor
-        <a class="swap" (click)="goTo()"> 
-            <img class="change" src="../assets/changeDisplay.png" alt="" srcset="">
-        </a>
-
-        <img class="logo" src="../assets/doctor.png" alt="" srcset="">
-
+      <svg
+        version="1.1"
+        class="hospitalLogo"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 1841.232 1623.351"
+        enable-background="new 0 0 1841.232 1623.351"
+        xml:space="preserve"
+        (click)="goToHome()"
+      >
+        <path
+          d="M1317.225,307.693V11.675H517.278v296.017H13.242v1303.983H1827.99V307.693H1317.225z M443.523,1289.005H147.714v-215.113
+       h295.809V1289.005z M443.523,956.24H147.714V741.127h295.809V956.24z M443.523,623.529H147.714V408.362h295.809V623.529z
+        M797.893,133.005h80.957V51.786h64.871v81.219h81.325v64.922h-81.325v80.904H878.85v-80.904h-80.957V133.005z M544.141,408.362
+       h295.809v215.167H544.141V408.362z M544.141,741.127h295.809V956.24H544.141V741.127z M544.141,1073.837h295.809v215.113H544.141
+       V1073.837z M1236.637,1607.575H591.295v-204.441h645.342V1607.575z M1250.095,1289.005H954.393v-215.113h295.703V1289.005z
+        M1250.095,956.24H954.393V741.127h295.703V956.24z M1250.095,623.529H954.393V408.362h295.703V623.529z M1680.427,1289.005
+       h-296.019v-215.113h296.019V1289.005z M1680.427,956.24h-296.019V741.127h296.019V956.24z M1680.427,623.529h-296.019V408.362
+       h296.019V623.529z"
+        />
+      </svg>
+      <span class="title">Hospital - Patients</span>
     </mat-toolbar>
-    <button mat-raised-button  color="primary" id="backButton" (click)="goBack()"><mat-icon>arrow_back</mat-icon>
-        Back</button>   
-     
-        <button mat-raised-button  color="primary" id="backButton" (click)="goToDoctors()">Doctors</button>
-            <button mat-raised-button (click)="goToPatients()" disabled>Patients</button>
-</ng-template>
+    <mat-toolbar-row>
+      <button
+        mat-raised-button
+        color="primary"
+        id="backButton"
+        (click)="goBack()"
+      >
+        <mat-icon>arrow_back</mat-icon> Back
+      </button>
+      <button mat-raised-button class="doctorsButton" (click)="goToDoctors()">
+        Doctors
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        class="patientsButton"
+        (click)="goToPatients()"
+        disabled
+      >
+        Patients
+      </button>
+    </mat-toolbar-row>
+  </div>
+
+  <div *ngSwitchDefault>
+    <mat-toolbar class="home" color="primary">
+      <svg
+        version="1.1"
+        class="hospitalLogo"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 1841.232 1623.351"
+        enable-background="new 0 0 1841.232 1623.351"
+        xml:space="preserve"
+        (click)="goToHome()"
+      >
+        <path
+          d="M1317.225,307.693V11.675H517.278v296.017H13.242v1303.983H1827.99V307.693H1317.225z M443.523,1289.005H147.714v-215.113
+       h295.809V1289.005z M443.523,956.24H147.714V741.127h295.809V956.24z M443.523,623.529H147.714V408.362h295.809V623.529z
+        M797.893,133.005h80.957V51.786h64.871v81.219h81.325v64.922h-81.325v80.904H878.85v-80.904h-80.957V133.005z M544.141,408.362
+       h295.809v215.167H544.141V408.362z M544.141,741.127h295.809V956.24H544.141V741.127z M544.141,1073.837h295.809v215.113H544.141
+       V1073.837z M1236.637,1607.575H591.295v-204.441h645.342V1607.575z M1250.095,1289.005H954.393v-215.113h295.703V1289.005z
+        M1250.095,956.24H954.393V741.127h295.703V956.24z M1250.095,623.529H954.393V408.362h295.703V623.529z M1680.427,1289.005
+       h-296.019v-215.113h296.019V1289.005z M1680.427,956.24h-296.019V741.127h296.019V956.24z M1680.427,623.529h-296.019V408.362
+       h296.019V623.529z"
+        />
+      </svg>
+
+      <span class="title">Hospital - Home</span>
+    </mat-toolbar>
+    <mat-toolbar-row>
+      <button
+        mat-raised-button
+        color="primary"
+        id="backButton"
+        (click)="goBack()"
+      >
+        <mat-icon>arrow_back</mat-icon> Back
+      </button>
+      <button mat-raised-button class="doctorsButton" (click)="goToDoctors()">
+        Doctors
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        class="patientsButton"
+        (click)="goToPatients()"
+      >
+        Patients
+      </button>
+    </mat-toolbar-row>
+  </div>
+</container-element>

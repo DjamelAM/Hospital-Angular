@@ -2,20 +2,25 @@
   background-color: #ff495c;
 }
 .patient {
-  // background-color: #8b9eb7;
+  background-color: cornflowerblue;
+}
+.home {
+  background-color: indigo;
 }
 .logo {
   width: 68px;
 }
-
-.change {
-  width: 66px;
-  padding-top: 10px;
+svg {
+  width: 68px;
   cursor: pointer;
+}
+.hospitalLogo {
+  fill: white;
 }
 
 .title {
-  width: 50%;
+  text-align: center;
+  width: 100%;
 }
 
 .swap {
@@ -30,4 +35,19 @@ a {
 
 a:hover {
   color: aqua;
+}
+
+button {
+  width: 33%;
+  margin: 10px;
+}
+.mat-toolbar-row {
+  margin-bottom: 10px;
+}
+.doctorsButton {
+  background-color: #ff495c;
+  color: white;
+}
+.patientsButton {
+  background-color: cornflowerblue;
 }

@@ -5,10 +5,10 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AccueilComponent } from './accueil/accueil.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, AccueilComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

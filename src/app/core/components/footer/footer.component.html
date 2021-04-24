@@ -1,3 +1,22 @@
-<mat-toolbar class="footbar">
-    <span>2021 - Hospital application - Djamel AMRAOUI</span>
-</mat-toolbar>
+<container-element class="footer" [ngSwitch]="navbar">
+  <div *ngSwitchCase="'doctors'">
+    <mat-toolbar class="doctor" color="primary">
+      <span class="title">2021 - Hospital application</span>
+      <span class="name"> Djamel AMRAOUI</span>
+    </mat-toolbar>
+  </div>
+
+  <div *ngSwitchCase="'patients'">
+    <mat-toolbar class="patient" color="primary">
+      <span class="title">2021 - Hospital application</span>
+      <span class="name"> Djamel AMRAOUI</span>
+    </mat-toolbar>
+  </div>
+
+  <div *ngSwitchDefault>
+    <mat-toolbar class="home" color="primary">
+      <span class="title">2021 - Hospital application</span>
+      <span class="name"> Djamel AMRAOUI</span>
+    </mat-toolbar>
+  </div>
+</container-element>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccueilComponent } from './accueil/accueil.component';
+import { HomeComponent } from './home/home.component';
 
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: AccueilComponent,
+    component: HomeComponent,
   },
 
   {
