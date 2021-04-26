@@ -9,9 +9,10 @@ import { PatientService } from './services/http/patient.service';
 import { ExcelService } from './services/http/excel.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, LoginComponent],
   imports: [
     CommonModule,
     MatToolbarModule,

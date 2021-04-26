@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "hospital-e4363"
+  },
+  "targets": {
+    "hospital-e4363": {
+      "hosting": {
+        "hospital": [
+          "hospital-e4363"
+        ]
+      }
+    }
+  }
+}
