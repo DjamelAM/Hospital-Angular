@@ -32,13 +32,13 @@
       </div>
 
       <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
+        <span (click)="goToForgotPass()">Forgot Password?</span>
       </div>
     </div>
 
     <div class="redirectToLogin">
       <span
-        >Not registered yet?<span class="redirect" routerLink="/sign-up">
+        >Not registered yet?<span class="redirect" (click)="goToSignUp()">
           Register</span
         ></span
       >

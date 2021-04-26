@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgAuthService } from '../../services/http/authentication.service';
 
 @Component({
@@ -7,7 +8,15 @@ import { NgAuthService } from '../../services/http/authentication.service';
   styleUrls: ['./sign-in.component.css'],
 })
 export class SignInComponent implements OnInit {
-  constructor(public ngAuthService: NgAuthService) {}
+  constructor(public ngAuthService: NgAuthService, private _router: Router) {}
 
   ngOnInit() {}
+
+  goToSignUp() {
+    this._router.navigateByUrl('/sign-up');
+  }
+
+  goToForgotPass() {
+    this._router.navigateByUrl('/forgot-password');
+  }
 }

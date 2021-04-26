@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/auth-guard/auth.guard';
+import { ForgotPasswordComponent } from './core/components/forgot-password/forgot-password.component';
 import { LoginComponent } from './core/components/login/login.component';
 import { SignInComponent } from './core/components/sign-in/sign-in.component';
 import { SignUpComponent } from './core/components/sign-up/sign-up.component';
+import { VerifyEmailComponent } from './core/components/verify-email/verify-email.component';
 import { HomeComponent } from './home/home.component';
 
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 const routes: Routes = [
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'email-verification', component: VerifyEmailComponent },
+  { path: 'sign-in', component: SignInComponent },
+  { path: 'sign-up', component: SignUpComponent },
   {
     path: 'doctors',
     loadChildren: () =>
@@ -26,12 +32,15 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
+  },
+  {
     path: '',
     component: HomeComponent,
     canActivate: [AuthGuard],
   },
-  { path: 'sign-in', component: SignInComponent },
-  { path: 'sign-up', component: SignUpComponent },
 
   {
     path: '**',

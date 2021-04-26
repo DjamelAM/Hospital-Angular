@@ -44,7 +44,8 @@ export class NgAuthService {
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigateByUrl('/home');
+          //this.router.navigate(['/home']);
         });
         this.SetUserData(result.user);
       })
