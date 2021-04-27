@@ -95,6 +95,14 @@
         *matRowDef="let row; columns: displayedColumns"
       ></tr>
     </table>
+    <div class="wait">
+      <mat-progress-spinner
+        *ngIf="isLoading"
+        color="primary"
+        mode="indeterminate"
+      >
+      </mat-progress-spinner>
+    </div>
     <mat-paginator [pageSizeOptions]="[10, 25, 100]"> </mat-paginator>
   </div>
   <div class="button">

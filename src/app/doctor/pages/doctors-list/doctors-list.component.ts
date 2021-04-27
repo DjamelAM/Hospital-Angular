@@ -27,6 +27,7 @@ export class DoctorsListComponent implements OnInit {
     'delete',
   ];
   dataSource: MatTableDataSource<IDoctor>;
+  isLoading: Boolean = true;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -36,11 +37,10 @@ export class DoctorsListComponent implements OnInit {
     public dialog: MatDialog,
     private _router: Router
   ) {
-    this._doctorService
-      .getDoctors()
-      .subscribe(
-        (doctors) => (this.dataSource = new MatTableDataSource(doctors))
-      );
+    this._doctorService.getDoctors().subscribe((doctors) => {
+      this.dataSource = new MatTableDataSource(doctors);
+      this.isLoading = false;
+    });
   }
 
   ngOnInit(): void {}

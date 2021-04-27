@@ -55,3 +55,14 @@ th {
 main {
   min-height: 100%;
 }
+.mat-progress-spinner {
+  margin: auto;
+}
+.wait {
+  background-color: white;
+}
+
+.wait ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: cornflowerblue;
+}

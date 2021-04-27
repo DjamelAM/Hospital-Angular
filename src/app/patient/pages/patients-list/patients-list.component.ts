@@ -31,6 +31,7 @@ export class PatientsListComponent implements OnInit {
     'delete',
   ];
   dataSource: MatTableDataSource<IPatient>;
+  isLoading: Boolean = true;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
@@ -40,11 +41,10 @@ export class PatientsListComponent implements OnInit {
     public dialog: MatDialog,
     private _router: Router
   ) {
-    this._patientService
-      .getPatients()
-      .subscribe(
-        (patients) => (this.dataSource = new MatTableDataSource(patients))
-      );
+    this._patientService.getPatients().subscribe((patients) => {
+      this.dataSource = new MatTableDataSource(patients);
+      this.isLoading = false;
+    });
   }
 
   ngOnInit(): void {}
