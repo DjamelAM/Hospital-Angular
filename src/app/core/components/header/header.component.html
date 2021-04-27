@@ -25,8 +25,13 @@
         />
       </svg>
       <span class="title">Hospital - Doctors</span>
+      <mat-icon
+        *ngIf="authenticationService.isLoggedIn"
+        (click)="authenticationService.SignOut()"
+        >exit_to_app</mat-icon
+      >
     </mat-toolbar>
-    <mat-toolbar-row>
+    <mat-toolbar-row *ngIf="authenticationService.isLoggedIn">
       <button
         mat-raised-button
         color="primary"
@@ -34,6 +39,9 @@
         (click)="goBack()"
       >
         <mat-icon>arrow_back</mat-icon> Back
+      </button>
+      <button mat-raised-button class="homeButton" (click)="goToHome()">
+        Home
       </button>
       <button
         mat-raised-button
@@ -80,8 +88,13 @@
         />
       </svg>
       <span class="title">Hospital - Patients</span>
+      <mat-icon
+        *ngIf="authenticationService.isLoggedIn"
+        (click)="authenticationService.SignOut()"
+        >exit_to_app</mat-icon
+      >
     </mat-toolbar>
-    <mat-toolbar-row>
+    <mat-toolbar-row *ngIf="authenticationService.isLoggedIn">
       <button
         mat-raised-button
         color="primary"
@@ -89,6 +102,9 @@
         (click)="goBack()"
       >
         <mat-icon>arrow_back</mat-icon> Back
+      </button>
+      <button mat-raised-button class="homeButton" (click)="goToHome()">
+        Home
       </button>
       <button mat-raised-button class="doctorsButton" (click)="goToDoctors()">
         Doctors
@@ -132,8 +148,19 @@
       </svg>
 
       <span class="title">Hospital - Home</span>
+      <mat-icon
+        *ngIf="authenticationService.isLoggedIn"
+        (click)="authenticationService.SignOut()"
+        >exit_to_app</mat-icon
+      >
+
+      <mat-icon
+        *ngIf="!authenticationService.isLoggedIn"
+        (click)="authenticationService.SignOut()"
+        >lock_open</mat-icon
+      >
     </mat-toolbar>
-    <mat-toolbar-row>
+    <mat-toolbar-row *ngIf="authenticationService.isLoggedIn">
       <button
         mat-raised-button
         color="primary"
@@ -141,6 +168,14 @@
         (click)="goBack()"
       >
         <mat-icon>arrow_back</mat-icon> Back
+      </button>
+      <button
+        mat-raised-button
+        class="homeButton"
+        (click)="goToHome()"
+        disabled
+      >
+        Home
       </button>
       <button mat-raised-button class="doctorsButton" (click)="goToDoctors()">
         Doctors

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/auth-guard/auth.guard';
 import { ForgotPasswordComponent } from './core/components/forgot-password/forgot-password.component';
-import { LoginComponent } from './core/components/login/login.component';
+
 import { SignInComponent } from './core/components/sign-in/sign-in.component';
 import { SignUpComponent } from './core/components/sign-up/sign-up.component';
 import { VerifyEmailComponent } from './core/components/verify-email/verify-email.component';
@@ -28,18 +28,15 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
   },
+
   {
     path: '',
     component: HomeComponent,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
   },
 
   {

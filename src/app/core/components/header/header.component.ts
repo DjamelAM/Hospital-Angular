@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { NgAuthService } from '../../services/http/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     private _activateRoute: ActivatedRoute,
     private _router: Router,
-    private location: Location
+    private location: Location,
+    public authenticationService: NgAuthService
   ) {}
 
   ngOnInit(): void {}
@@ -35,16 +37,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  goTo() {
-    if (location.pathname.includes('/doctors')) {
-      this._router.navigateByUrl('/patients');
-    }
-
-    if (location.pathname.includes('/patients')) {
-      this._router.navigateByUrl('/doctors');
-    }
-  }
-
   goBack() {
     this.location.back();
   }
@@ -56,6 +48,6 @@ export class HeaderComponent implements OnInit {
     this._router.navigateByUrl('/patients');
   }
   goToHome() {
-    this._router.navigateByUrl('');
+    this._router.navigateByUrl('/home');
   }
 }

@@ -32,14 +32,17 @@
       </div>
 
       <div class="forgotPassword">
-        <span (click)="goToForgotPass()">Forgot Password?</span>
+        <span (click)="goToForgotPass()" class="buttonClick"
+          >Forgot Password?</span
+        >
       </div>
     </div>
 
     <div class="redirectToLogin">
       <span
-        >Not registered yet?<span class="redirect" (click)="goToSignUp()">
-          Register</span
+        >Not registered yet?
+        <span class="redirect" (click)="goToSignUp()" class="buttonClick"
+          >Register</span
         ></span
       >
     </div>
