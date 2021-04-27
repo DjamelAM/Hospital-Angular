@@ -1,6 +1,8 @@
 import { Injectable, NgZone } from '@angular/core';
 import auth from 'firebase/firebase-auth';
 import { AngularFireAuth } from '@angular/fire/auth';
+import firebase from 'firebase/app';
+
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -90,7 +92,7 @@ export class NgAuthService {
   }
 
   GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider());
+    return this.AuthLogin(new firebase.auth.GoogleAuthProvider());
   }
 
   AuthLogin(provider) {
@@ -98,7 +100,7 @@ export class NgAuthService {
       .signInWithPopup(provider)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['home']);
         });
         this.SetUserData(result.user);
       })
