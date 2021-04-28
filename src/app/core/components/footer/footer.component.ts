@@ -25,4 +25,8 @@ export class FooterComponent implements OnInit {
       this.navbar = 'home';
     }
   }
+
+  goToGithub() {
+    window.open('https://github.com/DjamelAM/Hospital-Angular', '_blank');
+  }
 }

@@ -4,7 +4,7 @@
   width: 100%;
 }
 .title {
-  width: 100%;
+  //width: 50%;
 }
 .doctor {
   background-color: #ff495c;
@@ -14,4 +14,10 @@
 }
 .home {
   background-color: indigo;
+}
+
+svg {
+  width: 100%;
+  fill: white;
+  cursor: pointer;
 }

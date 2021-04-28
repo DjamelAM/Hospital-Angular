@@ -3,3 +3,39 @@
   cursor: pointer;
   color: rgb(219, 25, 35);
 }
+.displayTableCell {
+  margin: auto;
+  margin-top: 10%;
+}
+.displayTable {
+  display: flex;
+}
+
+.formGroup {
+  margin: 10px;
+}
+.login_container {
+  display: flex;
+}
+.login {
+  margin: auto;
+}
+.mat-form-field {
+  width: 100%;
+}
+
+svg {
+  width: 124px;
+  fill: indigo;
+  margin: 5% auto;
+  display: block;
+}
+.buttonLot {
+  display: flex;
+  flex-direction: column;
+}
+.mat-raised-button {
+  margin: 10px;
+  background-color: indigo;
+  color: white;
+}

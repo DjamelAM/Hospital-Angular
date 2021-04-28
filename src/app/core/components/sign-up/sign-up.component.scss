@@ -1,5 +1,25 @@
-.buttonClick {
-  text-decoration: underline;
-  cursor: pointer;
-  color: rgb(219, 25, 35);
+.login_container {
+  display: flex;
+}
+.login {
+  margin: auto;
+}
+.mat-form-field {
+  width: 100%;
+}
+
+svg {
+  width: 124px;
+  fill: indigo;
+  margin: 5% auto;
+  display: block;
+}
+.buttonLot {
+  display: flex;
+  flex-direction: column;
+}
+.mat-raised-button {
+  margin: 10px;
+  background-color: indigo;
+  color: white;
 }

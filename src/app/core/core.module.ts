@@ -9,15 +9,30 @@ import { PatientService } from './services/http/patient.service';
 import { ExcelService } from './services/http/excel.service';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+  ],
   imports: [
     CommonModule,
     MatToolbarModule,
     HttpClientModule,
     MatIconModule,
     MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
   ],
   providers: [DoctorService, PatientService, ExcelService],
   exports: [HeaderComponent, FooterComponent],
