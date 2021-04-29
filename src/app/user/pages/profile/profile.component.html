@@ -1,0 +1,29 @@
+<div class="login_container" *ngIf="ngAuthService.userState as user">
+  <div class="profile">
+    <h2>Profile</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your username :</mat-label>
+      <input matInput value="{{ user.displayName }}" type="text" #username />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Enter the url of your picture :</mat-label>
+      <input matInput value="{{ user.photoUrl }}" type="url" #picture />
+      <button mat-icon-button matSuffix></button>
+    </mat-form-field>
+    <div class="buttonLot">
+      <button
+        mat-raised-button
+        (click)="
+          ngAuthService.updateUsername(
+            username.value ? username.value : user.displayName,
+            picture.value ? picture.value : user.photoUrl
+          );
+          goToHome()
+        "
+      >
+        Update
+      </button>
+    </div>
+  </div>
+</div>

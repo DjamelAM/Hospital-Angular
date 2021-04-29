@@ -50,4 +50,8 @@ export class HeaderComponent implements OnInit {
   goToHome() {
     this._router.navigateByUrl('/home');
   }
+
+  goToProfile() {
+    this._router.navigateByUrl('/profile');
+  }
 }

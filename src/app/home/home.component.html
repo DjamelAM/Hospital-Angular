@@ -1,10 +1,29 @@
 <main>
   <div class="row" *ngIf="ngAuthService.userState as user">
+    <img
+      class="userPic"
+      src="{{
+        user.photoURL
+          ? user.photoURL
+          : 'https://blindspotetc.com/wp-content/uploads/2019/03/dummy-man-570x570.png'
+      }}"
+      alt="{{ user.displayName }}"
+    />
+
     <h2>
       Hi,
       <strong>{{ user.displayName ? user.displayName : user.email }} !</strong>
     </h2>
   </div>
+  <p class="email-verif" *ngIf="!ngAuthService.isVerified">
+    You still haven't verified your account<button
+      mat-raised-button
+      class="resend"
+      (click)="ngAuthService.SendVerificationMail()"
+    >
+      Resend Verification Email ?
+    </button>
+  </p>
 
   <h2>
     Welcolme to the hospital application, it helps you manage doctors and
@@ -30,4 +49,6 @@
     You can display details about a patient and display his doctor in the
     details section
   </p>
+  <h3>For User</h3>
+  <p>You can update your username and your picture in the profile page</p>
 </main>

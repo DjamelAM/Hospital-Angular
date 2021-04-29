@@ -26,6 +26,12 @@
       </svg>
       <span class="title">Hospital - Doctors</span>
       <mat-icon
+        class="profile"
+        *ngIf="authenticationService.isLoggedIn"
+        (click)="goToProfile()"
+        >person</mat-icon
+      >
+      <mat-icon
         *ngIf="authenticationService.isLoggedIn"
         (click)="authenticationService.SignOut()"
         >exit_to_app</mat-icon
@@ -89,6 +95,12 @@
       </svg>
       <span class="title">Hospital - Patients</span>
       <mat-icon
+        class="profile"
+        *ngIf="authenticationService.isLoggedIn"
+        (click)="goToProfile()"
+        >person</mat-icon
+      >
+      <mat-icon
         *ngIf="authenticationService.isLoggedIn"
         (click)="authenticationService.SignOut()"
         >exit_to_app</mat-icon
@@ -148,6 +160,12 @@
       </svg>
 
       <span class="title">Hospital - Home</span>
+      <mat-icon
+        class="profile"
+        *ngIf="authenticationService.isLoggedIn"
+        (click)="goToProfile()"
+        >person</mat-icon
+      >
       <mat-icon
         *ngIf="authenticationService.isLoggedIn"
         (click)="authenticationService.SignOut()"

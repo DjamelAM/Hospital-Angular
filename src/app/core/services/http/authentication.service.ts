@@ -88,7 +88,11 @@ export class NgAuthService {
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return user !== null && user.emailVerified !== false ? true : false;
+    return user !== null ? true : false;
+  }
+  get isVerified() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user.emailVerified !== false ? true : false;
   }
 
   GoogleAuth() {
@@ -123,6 +127,21 @@ export class NgAuthService {
     return userRef.set(userState, {
       merge: true,
     });
+  }
+
+  updateUsername(username, photoUrl) {
+    var user = firebase.auth().currentUser;
+    user
+      .updateProfile({
+        displayName: username,
+        photoURL: photoUrl,
+      })
+      .then(function () {
+        console.log('youhou');
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   SignOut() {

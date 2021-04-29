@@ -9,6 +9,7 @@ import { VerifyEmailComponent } from './core/components/verify-email/verify-emai
 import { HomeComponent } from './home/home.component';
 
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
+import { ProfileComponent } from './user/pages/profile/profile.component';
 
 const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
@@ -31,6 +32,12 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     //canActivate: [AuthGuard],
+  },
+
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
   },
 
   {

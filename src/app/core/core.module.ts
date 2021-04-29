@@ -15,6 +15,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     SignInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     CommonModule,
